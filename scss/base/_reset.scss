@@ -1,0 +1,35 @@
+@use "../abstract/variables" as*;
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    //background-color: map-get($colors, "background");/
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul,li{
+    list-style: none;
+}
+button{
+    background-color: transparent;
+    border: none;
+}
+input{
+    border: none;
+    outline: none;
+    &::placeholder{
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+    }
+}
+h1,h2,h3,h4,h5{
+    color: white;
+}

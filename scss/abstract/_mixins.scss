@@ -1,0 +1,103 @@
+@use "variables" as *;
+@mixin make-col($size,$columns : $grid-column){
+    flex: 0 0 auto;
+    width: percentage($size / $columns);
+} 
+@mixin make-offset($size, $columns : $grid-column) {
+    
+    margin-left: percentage($size / $columns);
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+    @if map-has-key($grid-breakpoints, $breakpoint) {
+       $breakpoint-value: map-get($grid-breakpoints, $breakpoint) ;
+       @if ($breakpoint-value== "infinit"){
+        @content;
+       }
+
+        @else {
+            @media screen and  (max-width:($breakpoint-value - 1)) {
+                    @content;
+                }
+        }
+    }
+
+    @else {
+        @warn "Invalid breakpoint: #{$breakpoint}.";
+    }
+}
+@mixin make-btn ($type) {
+    $height:0;
+    @if ($type== "primary"){
+        $height:72px;
+        
+
+    }
+    @else if($type== "secondary")
+         {
+            $height: 60px;
+           
+        }
+         @else if($type== "tertiary"){
+        
+            $height: 46px;
+            
+        }
+        .btn-#{$type} {
+            height: $height;
+            background-color: map-get($colors, cta);
+
+        }
+    
+        .btn-outline-#{$type} {
+            height: $height;
+            background-color: transparent ;
+            border: 2px solid map-get($colors, cta);
+        }
+  
+}
+@mixin avatar-style($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  
+}
+@mixin card-style($colors,$radius){
+    background-color:$background-color;
+    border-radius: $border-radius;
+    
+    
+    padding: $padding;
+}
+@mixin browse-category($colors,$radius){
+    background-color: $background-color;
+        border-radius: 30px;
+        
+    
+    
+        
+}
+@mixin discover($colors, $border-radius) {
+    background-color: $background-color;
+    border-radius: 30px;
+    }
+@mixin workcard-md($colors,$border-radius){
+    background-color: $background-color;
+    border-radius: 20px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+
+}
+@mixin workcard-sm($colors,$border-radius){
+    background-color: $background-color;
+    border-radius: 20px;
+     display: flex;
+    flex-flow: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}

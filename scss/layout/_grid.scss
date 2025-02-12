@@ -1,0 +1,17 @@
+@use "../abstract/variables" as*;
+@use "../abstract/mixins" as* ;
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    $infix: if($breakpoint ==xs, "", "-#{$breakpoint}");
+
+    @include media-breakpoint-down($breakpoint) {
+        @for $i from 0 through $grid-column {
+            .col#{$infix}-#{$i} {
+                @include make-col($i);
+            }
+            .offset#{$infix}-#{$i} {
+                @include make-offset($i);
+            }
+        }
+    }
+}

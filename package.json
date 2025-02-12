@@ -1,0 +1,17 @@
+{
+  "name": "sassproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "sass scss/style.scss css/style.css --watch --no-source-map",
+    "sass:compile": "sass scss/style.scss css/style.css  --no-source-map --style=compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.83.4"
+  }
+}

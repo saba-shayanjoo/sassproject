@@ -1,0 +1,21 @@
+@use "../abstract/variables" as*;
+@use "../abstract/mixins" as*;
+.btn{
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+    border-radius: 20px;
+    padding-top: 0 ;
+    padding-bottom: 0;
+    text-transform: capitalize;
+    color: white;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: none;
+}
+
+
+@each $type in "primary","secondary","tertiary" {
+    @include make-btn ($type);
+}
