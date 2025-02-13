@@ -841,9 +841,6 @@ body {
   }
 }
 @media screen and (max-width: 991px) {
-  .widget {
-    height: 480px;
-  }
   .widget .widgetbox {
     padding: 20px;
     height: 360px;
@@ -865,9 +862,6 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
-  .widget {
-    height: 645px;
-  }
   .widget .widgetbox {
     height: 100%;
     width: 100%;
@@ -879,14 +873,13 @@ body {
     align-items: center;
   }
   .widget .widgetbox__left {
-    margin: 0 auto;
     width: 80%;
-    height: 80vh;
+    height: auto;
   }
   .widget .widgetbox__left img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
   }
   .widget .widgetbox__right {
     margin: 0 auto;
