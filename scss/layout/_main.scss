@@ -854,7 +854,7 @@
 @include media-breakpoint-down("sm"){
     .widget{
         
-        height: 645px;
+       
         .widgetbox{
            
             
@@ -873,7 +873,7 @@
                 margin: 0 auto;
             
                     width:80%;
-                    height:80vh ;
+                    height:50vh ;
             
                     & img {
                         display: block;
